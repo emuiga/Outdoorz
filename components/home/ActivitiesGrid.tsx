@@ -23,10 +23,10 @@ const activities = [
     tall: false,
   },
   {
-    title: "Bird Walks",
+    title: "Nature Walks",
     tag: "Wildlife",
     meta: "Lake Nakuru · Elementaita",
-    href: "/trails?type=Bird+Walk",
+    href: "/trails?type=Walk",
     image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=700&q=80",
     tall: false,
   },

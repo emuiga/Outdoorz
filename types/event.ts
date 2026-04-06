@@ -1,5 +1,5 @@
 export type Difficulty = "Easy" | "Moderate" | "Challenging";
-export type ActivityType = "Hiking" | "Cycling" | "Bird Walk" | "Camping";
+export type ActivityType = "Hiking" | "Cycling" | "Walk" | "Camping";
 
 export interface TrailEvent {
   id: string;

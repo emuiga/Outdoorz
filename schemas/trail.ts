@@ -18,7 +18,7 @@ export const trail = defineType({
       name: "activityType",
       title: "Activity Type",
       type: "string",
-      options: { list: ["Hiking", "Cycling", "Bird Walk", "Night Hike"] },
+      options: { list: ["Hiking", "Walk", "Camping"] },
       validation: (r) => r.required(),
     }),
     defineField({ name: "distanceKm", title: "Distance (km)", type: "number" }),
