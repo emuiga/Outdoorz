@@ -2,17 +2,35 @@
 
 /* ─── Custom theme tokens ─────────────────────────────────────────── */
 @theme {
-  /* Colors */
-  --color-forest:  #1a3a2a;
-  --color-moss:    #2d5a3d;
-  --color-sage:    #4a7c59;
-  --color-fern:    #6b9e7a;
-  --color-mist:    #e8f0ea;
-  --color-sand:    #f5f0e8;
-  --color-gold:    #c8a84b;
-  --color-ember:   #d4663a;
-  --color-cream:   #faf7f2;
-  --color-dark:    #0f1f16;
+  /*
+   * Dark greens  (deep → mid)
+   *   dark       #020202  — deepest black-green, footer / ultra-dark elements
+   *   forest     #0d2818  — Evergreen: primary navbar, panel backgrounds
+   *   moss       #04471c  — Black Forest: card darks, hover surfaces
+   *   sage       #058c42  — Sea Green: accents, links, eyebrows
+   *   malachite  #16db65  — vibrant accent: active states, badges, highlights
+   *
+   * Light greens / neutrals  (kept from original palette)
+   *   fern       #6b9e7a  — muted light accent
+   *   mist       #e8f0ea  — very light green tint backgrounds
+   *   sand       #f5f0e8  — warm off-white sections
+   *   cream      #faf7f2  — page base background
+   *
+   * Accent colours
+   *   gold       #c8a84b  — CTAs, badges, highlights
+   *   ember      #d4663a  — sale / urgency badges
+   */
+  --color-dark:       #020202;
+  --color-forest:     #0d2818;
+  --color-moss:       #04471c;
+  --color-sage:       #058c42;
+  --color-malachite:  #16db65;
+  --color-fern:       #6b9e7a;
+  --color-mist:       #e8f0ea;
+  --color-sand:       #f5f0e8;
+  --color-cream:      #faf7f2;
+  --color-gold:       #c8a84b;
+  --color-ember:      #d4663a;
 
   /* Fonts */
   --font-display: var(--font-playfair), Georgia, serif;

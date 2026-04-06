@@ -18,7 +18,6 @@ export default function Navbar() {
   const openCart = useCartStore((s) => s.openCart);
   const totalItems = useCartStore((s) => s.totalItems);
 
-  // Avoid hydration mismatch for cart count
   useEffect(() => { setMounted(true); }, []);
 
   const handleScroll = useCallback(() => {
@@ -31,47 +30,52 @@ export default function Navbar() {
   }, [handleScroll]);
 
   const isHomepage = pathname === "/";
-  // On the homepage, start transparent; everywhere else always opaque
+  // Transparent only on the homepage hero — everywhere else always opaque
   const opaque = !isHomepage || scrolled;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
-          opaque
-            ? "bg-forest/95 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+          opaque ? "bg-forest/95 backdrop-blur-md shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
               src="/images/logo.jpg"
               alt="Nakuru Nature Trails & Summits"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
+              width={52}
+              height={52}
+              className="rounded-full object-cover ring-2 ring-white/10"
               priority
             />
-            <span className="hidden sm:block font-display font-700 text-sm text-mist leading-tight">
-              NNTS
-            </span>
+            <div className="hidden sm:block leading-tight">
+              <p className={`font-display font-700 text-sm transition-colors duration-300 ${opaque ? "text-mist" : "text-forest"}`}>
+                Nakuru Nature Trails
+              </p>
+              <p className={`font-display italic text-xs transition-colors duration-300 ${opaque ? "text-mist/60" : "text-forest/70"}`}>
+                &amp; Summits
+              </p>
+            </div>
           </Link>
 
-          {/* Desktop nav links */}
-          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1">
+          {/* Desktop nav */}
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-2 text-sm font-sans font-500 rounded-md transition-colors ${
+                  className={`relative px-3.5 py-2 text-sm font-sans font-500 rounded-md transition-colors duration-300 ${
                     isActive
                       ? "text-gold"
-                      : "text-mist/80 hover:text-mist hover:bg-white/5"
+                      : opaque
+                        ? "text-mist/80 hover:text-mist hover:bg-white/8"
+                        : "text-forest/80 hover:text-forest hover:bg-forest/8"
                   }`}
                 >
                   {link.label}
@@ -84,16 +88,16 @@ export default function Navbar() {
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             {/* Cart */}
             <button
               onClick={openCart}
               aria-label="Open cart"
-              className="relative p-2 text-mist/70 hover:text-mist transition-colors"
+              className={`relative p-2.5 transition-colors duration-300 ${opaque ? "text-mist/75 hover:text-mist" : "text-forest/75 hover:text-forest"}`}
             >
               <ShoppingBag size={20} />
               {mounted && totalItems() > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-dark text-[10px] font-sans font-700 leading-none">
+                <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-dark text-[10px] font-sans font-700 leading-none">
                   {totalItems()}
                 </span>
               )}
@@ -102,7 +106,7 @@ export default function Navbar() {
             {/* Book a Hike CTA — desktop only */}
             <Link
               href="/events"
-              className="hidden lg:inline-flex items-center px-5 py-2 rounded-full bg-gold hover:bg-gold/90 text-dark text-sm font-sans font-600 transition-all hover:-translate-y-px"
+              className="hidden lg:inline-flex items-center ml-1 px-5 py-2 rounded-full bg-gold hover:bg-gold/90 text-dark text-sm font-sans font-600 transition-all hover:-translate-y-px"
             >
               Book a Hike
             </Link>
@@ -111,9 +115,9 @@ export default function Navbar() {
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="lg:hidden p-2 text-mist/70 hover:text-mist transition-colors"
+              className={`lg:hidden p-2.5 transition-colors duration-300 ${opaque ? "text-mist hover:text-malachite" : "text-forest hover:text-moss"}`}
             >
-              <Menu size={22} />
+              <Menu size={24} strokeWidth={2} />
             </button>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark text-mist/70">
+    <footer className="bg-[#020202] text-mist/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Top section */}
@@ -86,7 +86,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex items-center justify-center h-9 w-9 rounded-full border border-mist/10 text-mist/50 hover:border-gold/50 hover:text-gold transition-colors"
+                  className="flex items-center justify-center h-9 w-9 rounded-full border border-mist/10 text-mist/50 hover:border-malachite/50 hover:text-malachite transition-colors"
                 >
                   {s.icon}
                 </a>
