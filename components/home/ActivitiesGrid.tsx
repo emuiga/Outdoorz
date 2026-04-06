@@ -31,11 +31,11 @@ const activities = [
     tall: false,
   },
   {
-    title: "Night Hikes",
-    tag: "Adventure",
-    meta: "Torchlight · Stargazing",
-    href: "/events?type=Night+Hike",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&q=80",
+    title: "Camping",
+    tag: "Overnight",
+    meta: "Rift Valley · Crater rim · Stargazing",
+    href: "/events?type=Camping",
+    image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=700&q=80",
     tall: false,
   },
 ];

@@ -11,7 +11,7 @@ export const event = defineType({
       name: "activityType",
       title: "Activity Type",
       type: "string",
-      options: { list: ["Hiking", "Cycling", "Bird Walk", "Night Hike"] },
+      options: { list: ["Hiking", "Cycling", "Bird Walk", "Camping"] },
     }),
     defineField({
       name: "difficulty",

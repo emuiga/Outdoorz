@@ -4,7 +4,7 @@ import ActivitiesGrid from "@/components/home/ActivitiesGrid";
 import GalleryStrip from "@/components/home/GalleryStrip";
 import EventsPreview from "@/components/home/EventsPreview";
 import CommunitySection from "@/components/home/CommunitySection";
-import MerchPreview from "@/components/home/MerchPreview";
+import PastHikes from "@/components/home/PastHikes";
 
 export default function HomePage() {
   return (
@@ -15,7 +15,7 @@ export default function HomePage() {
       <GalleryStrip />
       <EventsPreview />
       <CommunitySection />
-      <MerchPreview />
+      <PastHikes />
     </>
   );
 }

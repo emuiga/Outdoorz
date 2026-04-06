@@ -68,7 +68,7 @@ export default function Hero() {
           </Link>
           <Link
             href="/trails"
-            className="px-8 py-3.5 rounded-full border border-mist/30 hover:border-mist/60 text-mist font-sans font-500 text-sm backdrop-blur-sm transition-all hover:-translate-y-px"
+            className="px-8 py-3.5 rounded-full border border-mist/40 hover:border-mist/70 hover:bg-mist/10 text-mist font-sans font-500 text-sm transition-all hover:-translate-y-px"
           >
             Explore Trails
           </Link>
