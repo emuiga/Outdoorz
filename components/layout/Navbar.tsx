@@ -11,7 +11,6 @@ import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -20,45 +19,28 @@ export default function Navbar() {
 
   useEffect(() => { setMounted(true); }, []);
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 80);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  const isHomepage = pathname === "/";
-  // Transparent only on the homepage hero — everywhere else always opaque
-  const opaque = !isHomepage || scrolled;
+  // Stable reference — prevents MobileMenu's pathname-change effect from misfiring
+  const handleClose = useCallback(() => setMenuOpen(false), []);
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
-          opaque ? "bg-forest/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      {/* h-[64px] + overflow-visible lets the 80px logo protrude 8px below */}
+      <header className="fixed top-0 left-0 right-0 z-30 h-[64px] overflow-visible bg-forest/95 backdrop-blur-md shadow-sm">
+        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-          {/* Logo */}
+          {/* Logo — protrudes below nav bar */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
               src="/images/logo.jpg"
               alt="Nakuru Nature Trails & Summits"
-              width={52}
-              height={52}
-              className="rounded-full object-cover ring-2 ring-white/10"
+              width={80}
+              height={80}
+              className="rounded-full object-cover ring-2 ring-white/20 shadow-lg"
               priority
             />
             <div className="hidden sm:block leading-tight">
-              <p className={`font-display font-700 text-sm transition-colors duration-300 ${opaque ? "text-mist" : "text-forest"}`}>
-                Nakuru Nature Trails
-              </p>
-              <p className={`font-display italic text-xs transition-colors duration-300 ${opaque ? "text-mist/60" : "text-forest/70"}`}>
-                &amp; Summits
-              </p>
+              <p className="font-display font-700 text-sm text-mist">Nakuru Nature Trails</p>
+              <p className="font-display italic text-xs text-mist/60">&amp; Summits</p>
             </div>
           </Link>
 
@@ -70,12 +52,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-2 text-sm font-sans font-500 rounded-md transition-colors duration-300 ${
+                  className={`relative px-3.5 py-2 text-sm font-sans font-500 rounded-md transition-colors ${
                     isActive
                       ? "text-gold"
-                      : opaque
-                        ? "text-mist/80 hover:text-mist hover:bg-white/8"
-                        : "text-forest/80 hover:text-forest hover:bg-forest/8"
+                      : "text-mist/80 hover:text-mist hover:bg-white/8"
                   }`}
                 >
                   {link.label}
@@ -89,11 +69,10 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-1">
-            {/* Cart */}
             <button
               onClick={openCart}
               aria-label="Open cart"
-              className={`relative p-2.5 transition-colors duration-300 ${opaque ? "text-mist/75 hover:text-mist" : "text-forest/75 hover:text-forest"}`}
+              className="relative p-2.5 text-mist/75 hover:text-mist transition-colors"
             >
               <ShoppingBag size={20} />
               {mounted && totalItems() > 0 && (
@@ -103,7 +82,6 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Book a Hike CTA — desktop only */}
             <Link
               href="/events"
               className="hidden lg:inline-flex items-center ml-1 px-5 py-2 rounded-full bg-gold hover:bg-gold/90 text-dark text-sm font-sans font-600 transition-all hover:-translate-y-px"
@@ -111,11 +89,11 @@ export default function Navbar() {
               Book a Hike
             </Link>
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger */}
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className={`lg:hidden p-2.5 transition-colors duration-300 ${opaque ? "text-mist hover:text-malachite" : "text-forest hover:text-moss"}`}
+              className="lg:hidden p-2.5 text-mist hover:text-malachite transition-colors"
             >
               <Menu size={24} strokeWidth={2} />
             </button>
@@ -123,7 +101,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      <MobileMenu isOpen={menuOpen} onClose={handleClose} />
     </>
   );
 }
