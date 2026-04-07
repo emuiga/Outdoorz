@@ -24,18 +24,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* h-[64px] + overflow-visible lets the 80px logo protrude 8px below */}
-      <header className="fixed top-0 left-0 right-0 z-30 h-[64px] overflow-visible bg-forest/95 backdrop-blur-md shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-30 h-[64px] bg-forest/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-          {/* Logo — protrudes below nav bar */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
               src="/images/logo.jpg"
               alt="Nakuru Nature Trails & Summits"
-              width={80}
-              height={80}
-              className="rounded-full object-cover ring-2 ring-white/20 shadow-lg"
+              width={52}
+              height={52}
+              className="rounded-full object-cover ring-2 ring-white/10"
               priority
             />
             <div className="hidden sm:block leading-tight">

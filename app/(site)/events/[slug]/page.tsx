@@ -1,20 +1,55 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Calendar, Clock, MapPin, ArrowLeft, CheckCircle, XCircle, Package, Star } from "lucide-react";
 import DifficultyBadge from "@/components/ui/DifficultyBadge";
+import JsonLd from "@/components/JsonLd";
 import { allEvents } from "@/lib/events-data";
+import { siteUrl } from "@/lib/site";
 
 export async function generateStaticParams() {
   return allEvents.map((e) => ({ slug: e.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const event = allEvents.find((e) => e.slug === slug);
   if (!event) return {};
+
+  const url = `${siteUrl}/events/${event.slug}`;
+  const imageUrl = `${siteUrl}/events/${event.slug}/opengraph-image`;
+  const dateLabel = formatDate(event.date);
+
   return {
-    title: `${event.title} | NNTS Events`,
-    description: event.description,
+    title: event.title,
+    description: `${event.description} ${dateLabel} · KSh ${event.priceKsh.toLocaleString()} per person.`,
+    keywords: [
+      event.title,
+      event.trail,
+      event.activityType,
+      "Kenya hiking event",
+      "NNTS event",
+      "Nakuru outdoors",
+      dateLabel,
+    ],
+    openGraph: {
+      title: event.title,
+      description: `${event.description} — ${dateLabel} · KSh ${event.priceKsh.toLocaleString()}/person`,
+      url,
+      type: "article",
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: event.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: event.title,
+      description: `${event.description} — ${dateLabel}`,
+      images: [imageUrl],
+    },
+    alternates: { canonical: url },
   };
 }
 
@@ -29,7 +64,56 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
   const event = allEvents.find((e) => e.slug === slug);
   if (!event) notFound();
 
+  const eventUrl = `${siteUrl}/events/${event.slug}`;
+
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.title,
+    description: event.description,
+    url: eventUrl,
+    image: event.image,
+    startDate: `${event.date}T${event.time}`,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: event.meetingPoint ?? event.trail,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: event.trail,
+        addressCountry: "KE",
+      },
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "Nakuru Nature Trails & Summits",
+      url: siteUrl,
+    },
+    offers: {
+      "@type": "Offer",
+      price: event.priceKsh,
+      priceCurrency: "KES",
+      availability: "https://schema.org/InStock",
+      url: eventUrl,
+    },
+    ...(event.guide ? { performer: { "@type": "Person", name: event.guide } } : {}),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Events", item: `${siteUrl}/events` },
+      { "@type": "ListItem", position: 3, name: event.title, item: eventUrl },
+    ],
+  };
+
   return (
+    <>
+      <JsonLd data={eventSchema} />
+      <JsonLd data={breadcrumbSchema} />
     <div className="bg-cream min-h-screen">
       {/* Hero */}
       <div className="relative h-[55vh] min-h-[360px] overflow-hidden bg-moss pt-[72px]">
@@ -207,5 +291,6 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
         </div>
       </div>
     </div>
+    </>
   );
 }

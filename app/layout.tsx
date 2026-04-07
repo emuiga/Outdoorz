@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -15,18 +16,78 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#1B3D2A",
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
-  title: "Nakuru Nature Trails & Summits",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Nakuru Nature Trails & Summits",
+    template: "%s | NNTS",
+  },
   description:
-    "Kenya's premier outdoor adventure community based in Nakuru. Group hikes, cycling, bird walks and night hikes in the Great Rift Valley.",
-  keywords: ["hiking", "Nakuru", "Kenya", "trails", "Rift Valley", "outdoor", "cycling"],
+    "Kenya's premier hiking community based in Nakuru. Group hikes, cycling, camping and bird walks in the Great Rift Valley. Join us — no experience needed.",
+  keywords: [
+    "hiking Kenya",
+    "Nakuru hikes",
+    "Rift Valley trails",
+    "group hiking Kenya",
+    "Mt Longonot hike",
+    "Menengai Crater hike",
+    "outdoor adventures Kenya",
+    "cycling Nakuru",
+    "camping Kenya",
+    "NNTS",
+  ],
+  authors: [{ name: "Nakuru Nature Trails & Summits", url: siteUrl }],
+  creator: "NNTS",
+  publisher: "Nakuru Nature Trails & Summits",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Nakuru Nature Trails & Summits",
-    description: "Meet new friends, explore breathtaking trails, create unforgettable memories.",
+    description:
+      "Meet new friends, explore breathtaking trails, create unforgettable memories in Kenya's Great Rift Valley.",
+    url: siteUrl,
     siteName: "NNTS",
     locale: "en_KE",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Nakuru Nature Trails & Summits — Kenya hiking community",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nakuru Nature Trails & Summits",
+    description:
+      "Kenya's premier hiking community. Group hikes, cycling and adventures in the Great Rift Valley.",
+    images: ["/opengraph-image"],
+    creator: "@NNTS_Kenya",
+    site: "@NNTS_Kenya",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  verification: {
+    // google: "your-google-site-verification-token",
+  },
+  category: "sports",
 };
 
 export default function RootLayout({
