@@ -74,6 +74,6 @@ export const useCartStore = create<CartStore>()(
           0
         ),
     }),
-    { name: "nnts-cart" }
+    { name: "roam-cart" }
   )
 );

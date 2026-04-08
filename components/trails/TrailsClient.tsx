@@ -92,7 +92,7 @@ export default function TrailsClient({ trails }: { trails: any[] }) {
           </div>
           <a
             href={`https://wa.me/254768519115?text=${encodeURIComponent(
-              "Hi NNTS! 👋 I know a hidden gem trail you should check out.\n\nTrail name: \nLocation / region: \nApprox. distance & duration: \nWhat makes it special: \n\nWould love to see it added to your list!"
+              "Hi Roam! 👋 I know a hidden gem trail you should check out.\n\nTrail name: \nLocation / region: \nApprox. distance & duration: \nWhat makes it special: \n\nWould love to see it added to your list!"
             )}`}
             target="_blank"
             rel="noopener noreferrer"

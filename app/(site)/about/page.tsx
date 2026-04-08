@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Story | Nakuru Nature Trails & Summits",
+  title: "Our Story | Roam Adventures",
   description:
     "We're a Nakuru-based outdoor community putting Kenya's trails on the map — one hike at a time.",
 };
@@ -74,7 +74,7 @@ export default function AboutPage() {
               We put Kenya&apos;s trails on the map
             </h2>
             <p className="body-light text-dark/65 leading-relaxed">
-              Nakuru Nature Trails &amp; Summits was born in 2019 from a simple frustration: too
+              Roam Adventures was born in 2019 from a simple frustration: too
               many Kenyans didn&apos;t know the extraordinary wilderness sitting in their own
               backyard. The Menengai crater, Hell&apos;s Gate gorges, the Aberdare moorlands —
               world-class terrain that deserved to be walked, not just admired from the road.
@@ -82,7 +82,7 @@ export default function AboutPage() {
             <p className="body-light text-dark/65 leading-relaxed">
               We started with weekend hikes out of Nakuru. Word spread fast. Within a year we had
               a community. Within two, we had members from across Kenya joining us on trail.
-              Today, NNTS runs weekly group hikes, cycling routes, camping trips, and private
+              Today, Roam runs weekly group hikes, cycling routes, camping trips, and private
               expeditions — all guided, all safe, all unforgettable.
             </p>
             <p className="body-light text-dark/65 leading-relaxed">
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-moss">
             <Image
               src="/images/nature.webp"
-              alt="NNTS hikers on trail"
+              alt="Roam hikers on trail"
               fill
               className="object-cover"
             />

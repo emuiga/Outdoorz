@@ -75,7 +75,7 @@ export default async function EventOGImage({
           padding: "56px 72px",
         }}
       >
-        {/* Top — NNTS brand */}
+        {/* Top — Roam brand */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div
             style={{
@@ -88,10 +88,10 @@ export default async function EventOGImage({
               justifyContent: "center",
             }}
           >
-            <span style={{ color: "#1B3D2A", fontSize: 24, fontWeight: 800, fontFamily: "Georgia, serif" }}>N</span>
+            <span style={{ color: "#1B3D2A", fontSize: 24, fontWeight: 800, fontFamily: "Georgia, serif" }}>R</span>
           </div>
           <span style={{ color: "rgba(238,232,210,0.75)", fontSize: 17, fontFamily: "system-ui, sans-serif", fontWeight: 600, letterSpacing: "0.05em" }}>
-            NNTS · Events
+            Roam · Events
           </span>
         </div>
 
@@ -144,7 +144,7 @@ export default async function EventOGImage({
             )}
           </div>
           <span style={{ color: "rgba(238,232,210,0.4)", fontSize: 15, fontFamily: "system-ui, sans-serif" }}>
-            nnts.co.ke
+            roamadventures.co.ke
           </span>
         </div>
       </div>

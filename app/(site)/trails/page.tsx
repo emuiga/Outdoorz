@@ -4,7 +4,7 @@ import TrailsClient from "@/components/trails/TrailsClient";
 import { allTrails } from "@/lib/trails-data";
 
 export const metadata: Metadata = {
-  title: "Trails | Nakuru Nature Trails & Summits",
+  title: "Trails | Roam Adventures",
   description: "Explore hiking trails, nature walks and camping spots across Kenya — from the Rift Valley to Mt. Kenya.",
 };
 

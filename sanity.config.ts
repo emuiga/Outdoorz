@@ -5,7 +5,7 @@ import { schemaTypes } from "./schemas";
 
 export default defineConfig({
   name: "nnts",
-  title: "NNTS — Content Studio",
+  title: "Roam — Content Studio",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
 
@@ -13,7 +13,7 @@ export default defineConfig({
     structureTool({
       structure: (S) =>
         S.list()
-          .title("NNTS Content")
+          .title("Roam Content")
           .items([
             S.listItem().title("Trails").schemaType("trail").child(S.documentTypeList("trail")),
             S.listItem().title("Events").schemaType("event").child(S.documentTypeList("event")),

@@ -4,7 +4,7 @@ import { getGalleryImages } from "@/lib/sanity/queries";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gallery | Nakuru Nature Trails & Summits",
+  title: "Gallery | Roam Adventures",
   description: "Photos from past hikes, cycling rides and camping trips across Kenya.",
 };
 
@@ -53,7 +53,7 @@ export default async function GalleryPage() {
               </p>
             </div>
             <a
-              href="https://www.instagram.com/nakurunaturetrailsandsummits/"
+              href="https://www.instagram.com/roamadventures/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-mist hover:border-fern text-sm font-sans font-500 text-dark/60 hover:text-dark transition-colors"
@@ -72,7 +72,7 @@ export default async function GalleryPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${img.url}?w=600&q=80`}
-                    alt={img.caption ?? "NNTS trail photo"}
+                    alt={img.caption ?? "Roam trail photo"}
                     loading="lazy"
                     className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -86,7 +86,7 @@ export default async function GalleryPage() {
             <div className="mt-16 text-center">
               <p className="body-light text-dark/40 text-sm mb-3">Want to see more?</p>
               <a
-                href="https://www.instagram.com/nakurunaturetrailsandsummits/"
+                href="https://www.instagram.com/roamadventures/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-mist hover:border-fern text-sm font-sans font-500 text-dark/60 hover:text-dark transition-colors"

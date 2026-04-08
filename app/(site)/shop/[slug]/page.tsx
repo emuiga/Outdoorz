@@ -22,14 +22,14 @@ export async function generateMetadata({
   const imageUrl = `${siteUrl}/shop/${product.slug}/opengraph-image`;
 
   return {
-    title: `${product.name} | NNTS Store`,
+    title: `${product.name} | Roam Store`,
     description: `${product.description} KSh ${product.price.toLocaleString()}.`,
-    keywords: [product.name, product.category, "NNTS", "Nakuru", "hiking gear", "Kenya outdoors"],
+    keywords: [product.name, product.category, "Roam", "Nakuru", "hiking gear", "Kenya outdoors"],
     openGraph: {
       title: product.name,
       description: `${product.description} — KSh ${product.price.toLocaleString()}`,
       url,
-      siteName: "NNTS Store",
+      siteName: "Roam Store",
       images: [{ url: imageUrl, width: 1200, height: 630, alt: product.name }],
       type: "website",
     },
@@ -59,7 +59,7 @@ export default async function ProductDetailPage({
     description: product.description,
     image: product.image,
     sku: product.id,
-    brand: { "@type": "Brand", name: "NNTS" },
+    brand: { "@type": "Brand", name: "Roam" },
     offers: {
       "@type": "Offer",
       priceCurrency: "KES",
@@ -68,7 +68,7 @@ export default async function ProductDetailPage({
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
       url: `${siteUrl}/shop/${product.slug}`,
-      seller: { "@type": "Organization", name: "Nakuru Nature Trails & Summits" },
+      seller: { "@type": "Organization", name: "Roam Adventures" },
     },
     ...(product.sizes
       ? {

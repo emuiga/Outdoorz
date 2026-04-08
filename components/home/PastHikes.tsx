@@ -63,7 +63,7 @@ export default async function PastHikes() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${img.url}?w=600&q=80&auto=format`}
-                  alt={img.caption ?? "NNTS hike photo"}
+                  alt={img.caption ?? "Roam hike photo"}
                   loading="lazy"
                   className="w-full h-auto block group-hover:scale-[1.03] transition-transform duration-400"
                 />

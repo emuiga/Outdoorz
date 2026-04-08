@@ -68,7 +68,7 @@ export default function OGImage() {
             opacity: 0.9,
           }}
         >
-          Nakuru Nature Trails & Summits
+          Roam Adventures
         </span>
       </div>
 

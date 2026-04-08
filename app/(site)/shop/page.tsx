@@ -5,8 +5,8 @@ import { allProducts } from "@/lib/products-data";
 import type { ProductCategory } from "@/types/product";
 
 export const metadata: Metadata = {
-  title: "Shop | Nakuru Nature Trails & Summits",
-  description: "NNTS branded gear, apparel and accessories — wear the trail.",
+  title: "Shop | Roam Adventures",
+  description: "Roam branded gear, apparel and accessories — wear the trail.",
 };
 
 const VALID_CATEGORIES: ProductCategory[] = ["Apparel", "Gear", "Accessories"];
@@ -24,7 +24,7 @@ export default async function ShopPage({
   return (
     <div className="bg-sand min-h-screen">
       <PageHeader
-        eyebrow="NNTS Store"
+        eyebrow="Roam Store"
         title="Wear the"
         titleAccent="trail"
         description="Branded apparel, hiking gear and accessories. Every purchase supports the community and keeps the trails maintained."

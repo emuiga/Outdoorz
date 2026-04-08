@@ -3,8 +3,8 @@ import PageHeader from "@/components/ui/PageHeader";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact | Nakuru Nature Trails & Summits",
-  description: "Get in touch with NNTS — WhatsApp is the fastest way to reach us.",
+  title: "Contact | Roam Adventures",
+  description: "Get in touch with Roam — WhatsApp is the fastest way to reach us.",
 };
 
 const contacts = [
@@ -12,7 +12,7 @@ const contacts = [
     label: "WhatsApp",
     value: "+254 768 519 115",
     desc: "Fastest way to reach us. We respond within a few hours.",
-    href: "https://wa.me/254768519115?text=Hi%20NNTS!%20I%27d%20like%20to%20get%20in%20touch.",
+    href: "https://wa.me/254768519115?text=Hi%20Roam!%20I%27d%20like%20to%20get%20in%20touch.",
     cta: "Open WhatsApp",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
@@ -25,9 +25,9 @@ const contacts = [
   },
   {
     label: "Instagram",
-    value: "@nakurunaturetrailsandsummits",
+    value: "@roamadventures",
     desc: "Trail updates, event announcements and community photos.",
-    href: "https://www.instagram.com/nakurunaturetrailsandsummits/",
+    href: "https://www.instagram.com/roamadventures/",
     cta: "Follow on Instagram",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">

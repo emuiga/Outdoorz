@@ -29,16 +29,15 @@ export default function Navbar() {
 
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
-              src="/images/logo.jpg"
-              alt="Nakuru Nature Trails & Summits"
+              src="/roamlogo-circle.png"
+              alt="Roam Adventures"
               width={52}
               height={52}
               className="rounded-full object-cover ring-2 ring-white/10"
               priority
             />
             <div className="hidden sm:block leading-tight">
-              <p className="font-display font-700 text-sm text-mist">Nakuru Nature Trails</p>
-              <p className="font-display italic text-xs text-mist/60">&amp; Summits</p>
+              <p className="font-display font-700 text-sm text-mist">Roam Adventures</p>
             </div>
           </Link>
 

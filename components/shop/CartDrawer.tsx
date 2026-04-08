@@ -48,7 +48,7 @@ export default function CartDrawer() {
   }
 
   function buildMessage(): string {
-    const lines: string[] = ["Hello NNTS! 👋 I'd like to place a merch order.\n"];
+    const lines: string[] = ["Hello Roam! 👋 I'd like to place a merch order.\n"];
     lines.push("*Order Details:*");
     items.forEach((item) => {
       const size = item.size ? ` (Size: ${item.size})` : "";

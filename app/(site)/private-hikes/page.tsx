@@ -3,7 +3,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import PrivateHikesClient from "@/components/private-hikes/PrivateHikesClient";
 
 export const metadata: Metadata = {
-  title: "Private Hikes | Nakuru Nature Trails & Summits",
+  title: "Private Hikes | Roam Adventures",
   description:
     "Organise a private hike for your group. We handle the planning, guiding and logistics — you just show up and hike.",
 };

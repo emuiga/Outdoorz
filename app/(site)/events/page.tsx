@@ -4,7 +4,7 @@ import EventsClient from "@/components/events/EventsClient";
 import { allEvents } from "@/lib/events-data";
 
 export const metadata: Metadata = {
-  title: "Events | Nakuru Nature Trails & Summits",
+  title: "Events | Roam Adventures",
   description: "Upcoming group hikes, nature walks and camping trips. Book your spot.",
 };
 

@@ -32,7 +32,7 @@ export async function generateMetadata({
       event.trail,
       event.activityType,
       "Kenya hiking event",
-      "NNTS event",
+      "Roam event",
       "Nakuru outdoors",
       dateLabel,
     ],
@@ -87,7 +87,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
     },
     organizer: {
       "@type": "Organization",
-      name: "Nakuru Nature Trails & Summits",
+      name: "Roam Adventures",
       url: siteUrl,
     },
     offers: {

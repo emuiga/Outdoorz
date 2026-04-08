@@ -24,8 +24,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nakuru Nature Trails & Summits",
-    template: "%s | NNTS",
+    default: "Roam Adventures",
+    template: "%s | Roam",
   },
   description:
     "Kenya's premier hiking community based in Nakuru. Group hikes, cycling, camping and bird walks in the Great Rift Valley. Join us — no experience needed.",
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     "outdoor adventures Kenya",
     "cycling Nakuru",
     "camping Kenya",
-    "NNTS",
+    "Roam Adventures",
   ],
-  authors: [{ name: "Nakuru Nature Trails & Summits", url: siteUrl }],
-  creator: "NNTS",
-  publisher: "Nakuru Nature Trails & Summits",
+  authors: [{ name: "Roam Adventures", url: siteUrl }],
+  creator: "Roam Adventures",
+  publisher: "Roam Adventures",
   robots: {
     index: true,
     follow: true,
@@ -56,11 +56,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Nakuru Nature Trails & Summits",
+    title: "Roam Adventures",
     description:
       "Meet new friends, explore breathtaking trails, create unforgettable memories in Kenya's Great Rift Valley.",
     url: siteUrl,
-    siteName: "NNTS",
+    siteName: "Roam Adventures",
     locale: "en_KE",
     type: "website",
     images: [
@@ -68,18 +68,18 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Nakuru Nature Trails & Summits — Kenya hiking community",
+        alt: "Roam Adventures — Kenya hiking community",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nakuru Nature Trails & Summits",
+    title: "Roam Adventures",
     description:
       "Kenya's premier hiking community. Group hikes, cycling and adventures in the Great Rift Valley.",
     images: ["/opengraph-image"],
-    creator: "@NNTS_Kenya",
-    site: "@NNTS_Kenya",
+    creator: "@RoamAdventures",
+    site: "@RoamAdventures",
   },
   alternates: {
     canonical: siteUrl,

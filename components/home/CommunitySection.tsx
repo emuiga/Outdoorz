@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Vanity dies on nature trails. NNTS gave me back my love for the outdoors and I've made friendships that'll last a lifetime.",
+    quote: "Vanity dies on nature trails. Roam gave me back my love for the outdoors and I've made friendships that'll last a lifetime.",
     name: "Amina W.",
     role: "Member since 2022 · Nakuru",
   },
@@ -64,7 +64,7 @@ export default function CommunitySection() {
             </h2>
             <p className="body-light text-mist/65 text-base mb-8 leading-relaxed">
               Whether you&apos;re chasing your first trail or your fiftieth summit —
-              there&apos;s a place for you in NNTS.
+              there&apos;s a place for you in Roam.
             </p>
 
             <ul className="space-y-3 mb-10">

@@ -1,2 +1,2 @@
 export const siteUrl =
-  (process.env.NEXT_PUBLIC_SITE_URL ?? "https://nnts.co.ke").replace(/\/$/, "");
+  (process.env.NEXT_PUBLIC_SITE_URL ?? "https://roamadventures.co.ke").replace(/\/$/, "");

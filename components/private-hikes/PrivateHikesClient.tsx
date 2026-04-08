@@ -62,7 +62,7 @@ export default function PrivateHikesClient() {
     if (!validate()) return;
 
     const lines = [
-      "Hi NNTS! 👋 I'd like to organise a private hike.\n",
+      "Hi Roam! 👋 I'd like to organise a private hike.\n",
       `Organiser: ${form.name}`,
       `Phone: ${form.phone}`,
       `Group size: ${form.groupSize} people`,

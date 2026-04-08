@@ -12,7 +12,7 @@ export default async function ProductOGImage({
   const { slug } = await params;
   const product = allProducts.find((p) => p.slug === slug);
 
-  const name = product?.name ?? "NNTS Merch";
+  const name = product?.name ?? "Roam Adventures Merch";
   const category = product?.category ?? "Shop";
   const price = product?.price ? `KSh ${product.price.toLocaleString()}` : "";
   const originalPrice = product?.originalPrice
@@ -53,10 +53,10 @@ export default async function ProductOGImage({
               justifyContent: "center",
             }}
           >
-            <span style={{ color: "#1B3D2A", fontSize: 24, fontWeight: 800, fontFamily: "Georgia, serif" }}>N</span>
+            <span style={{ color: "#1B3D2A", fontSize: 24, fontWeight: 800, fontFamily: "Georgia, serif" }}>R</span>
           </div>
           <span style={{ color: "rgba(238,232,210,0.7)", fontSize: 16, fontFamily: "system-ui, sans-serif", fontWeight: 600, letterSpacing: "0.05em" }}>
-            NNTS Store
+            Roam Store
           </span>
         </div>
 
@@ -138,7 +138,7 @@ export default async function ProductOGImage({
             </span>
           </div>
           <span style={{ color: "rgba(238,232,210,0.35)", fontSize: 14, fontFamily: "system-ui, sans-serif" }}>
-            nnts.co.ke/shop
+            roamadventures.co.ke/shop
           </span>
         </div>
       </div>

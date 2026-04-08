@@ -8,10 +8,10 @@ import { siteUrl } from "@/lib/site";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Nakuru Nature Trails & Summits",
-  alternateName: "NNTS",
+  name: "Roam Adventures",
+  alternateName: "Roam",
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.jpg`,
+  logo: `${siteUrl}/roamlogo-circle.png`,
   description:
     "Kenya's premier hiking and outdoor adventure community based in Nakuru. Group hikes, cycling, camping and bird walks in the Great Rift Valley.",
   address: {
@@ -25,13 +25,13 @@ const organizationSchema = {
     contactType: "customer service",
     availableLanguage: ["English", "Swahili"],
   },
-  sameAs: ["https://www.instagram.com/nnts_kenya"],
+  sameAs: ["https://www.instagram.com/roamadventures"],
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Nakuru Nature Trails & Summits",
+  name: "Roam Adventures",
   url: siteUrl,
   potentialAction: {
     "@type": "SearchAction",

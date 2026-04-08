@@ -9,7 +9,7 @@ import CommunitySection from "@/components/home/CommunitySection";
 import PastHikes from "@/components/home/PastHikes";
 
 export const metadata: Metadata = {
-  title: "Nakuru Nature Trails & Summits | Kenya Hiking Community",
+  title: "Roam Adventures | Kenya Hiking Community",
   description:
     "Join Kenya's most active hiking community. Guided group hikes, cycling rides, camping and bird walks across the Great Rift Valley — every weekend. All fitness levels welcome.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Hell's Gate cycling",
   ],
   openGraph: {
-    title: "Nakuru Nature Trails & Summits | Kenya Hiking Community",
+    title: "Roam Adventures | Kenya Hiking Community",
     description:
       "Join Kenya's most active hiking community. Guided group hikes, cycling and adventures across the Great Rift Valley — every weekend.",
     url: siteUrl,

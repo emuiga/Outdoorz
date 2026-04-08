@@ -36,7 +36,7 @@ export async function generateMetadata({
       trail.difficulty,
       trail.activityType,
       "Kenya hiking",
-      "NNTS trails",
+      "Roam trails",
     ],
     openGraph: {
       title: `${trail.name} — ${trail.difficulty} ${trail.activityType}`,

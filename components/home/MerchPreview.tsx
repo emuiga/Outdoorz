@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const products = [
   {
     slug: "nnts-summit-tee",
-    name: "NNTS Summit Tee",
+    name: "Roam Summit Tee",
     category: "Apparel",
     price: 1500,
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80",
@@ -19,14 +19,14 @@ const products = [
   },
   {
     slug: "nnts-insulated-bottle",
-    name: "NNTS Insulated Bottle",
+    name: "Roam Insulated Bottle",
     category: "Gear",
     price: 1200,
     image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80",
   },
   {
     slug: "nnts-hoodie",
-    name: "NNTS Hoodie",
+    name: "Roam Hoodie",
     category: "Apparel",
     price: 2800,
     image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",

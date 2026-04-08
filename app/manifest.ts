@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Nakuru Nature Trails & Summits",
-    short_name: "NNTS",
+    name: "Roam Adventures",
+    short_name: "Roam",
     description:
       "Kenya's premier hiking community. Group hikes, cycling and outdoor adventures in the Great Rift Valley.",
     start_url: "/",
