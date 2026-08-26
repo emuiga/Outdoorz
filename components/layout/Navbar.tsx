@@ -34,7 +34,6 @@ export default function Navbar() {
               width={52}
               height={52}
               className="rounded-full object-cover ring-2 ring-white/10"
-              priority
             />
             <div className="hidden sm:block leading-tight">
               <p className="font-display font-700 text-sm text-mist">Roam Adventures</p>
